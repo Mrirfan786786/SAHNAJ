@@ -8,32 +8,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Setup JDK 17
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '17'
           distribution: 'temurin'
           cache: 'gradle'
 
-      - name: Install & Setup Gradle Wrapper
+      - name: Ensure Executable Wrapper
         run: |
-          if [ ! -f "./gradlew" ] || [ ! -f "./gradle/wrapper/gradle-wrapper.jar" ]; then
-            curl -s -L -o gradle-9.3.1-bin.zip https://services.gradle.org/distributions/gradle-9.3.1-bin.zip
-            unzip -q gradle-9.3.1-bin.zip
-            ./gradle-9.3.1/bin/gradle wrapper --gradle-version 9.3.1
-            rm -rf gradle-9.3.1 gradle-9.3.1-bin.zip
-          fi
+          gradle wrapper --gradle-version 8.5 --distribution-type bin
           chmod +x gradlew
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug -x lint -x test --no-daemon --stacktrace
+      - name: Compile Debug APK
+        run: ./gradlew assembleDebug -x test -x lint --no-daemon --stacktrace
 
-      - name: Upload APK Artifact
+      - name: Publish APK to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: SAHNAJ-AI-v1.0
+          name: SAHNAJ-AI-Direct-APK
           path: app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
