@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SAHNAJ</string>
+    <string name="accessibility_service_description">SAHNAJ uses this service strictly to execute hands-free voice commands such as navigating back, going home, scrolling, opening apps, and clicking user-requested buttons. No personal data, passwords, or credentials are ever recorded or monitored.</string>
+    <string name="accessibility_service_summary">Hands-free voice action executor for SAHNAJ</string>
+    <string name="default_assistant_name">SAHNAJ</string>
+    <string name="app_tagline">Your Personal Android AI Assistant</string>
+    <string name="voice_interaction_service_description">SahNaj AI default digital assistant for hands-free voice commands, screen assistance, and voice control.</string>
+    <string name="default_assistant_setting_title">Set as Default Assistant</string>
+    <string name="default_assistant_setting_desc">SahNaj ko Android ka default digital assistant banayein taaki Home button long-press ya assistant gesture se SahNaj turant open ho.</string>
+    <string name="google_web_client_id">623431647609-apfum4oi0ouitc6fks9b4c9iaiut2ckv.apps.googleusercontent.com</string>
+</resources>

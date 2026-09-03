@@ -1,0 +1,6 @@
+{
+  "name": "SAHNAJ",
+  "description": "Cyberpunk Personal AI Assistant with real-time voice interaction, neural image & video generation, device automation, and custom API provider integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
